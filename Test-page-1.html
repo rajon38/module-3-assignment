@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        // Function to display click coordinates
+        function displayCoordinates(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            alert("Clicked at coordinates: (" + x + ", " + y + ")");
+        }
+
+        // Function to display key code
+        function displayKeyCode(event) {
+            var keyCode = event.keyCode || event.which;
+            alert("Pressed key code: " + keyCode);
+        }
+
+        // Function to change image source
+        function changeImageSource() {
+            var image = document.getElementById("myImage");
+            image.src = "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2022-08/220805-domestic-cat-mjf-1540-382ba2.jpg";
+        }
+    </script>
+    <title>7.JS Common Events</title>
+</head>
+<body>
+
+<h1>Interactive Webpage</h1>
+
+<!-- Attach click event listener to the entire page -->
+<div onclick="displayCoordinates(event)" style="height: 500px;">
+    <p>Click anywhere on the page</p>
+</div>
+
+<!-- Attach keydown event listener to the entire page -->
+<div onkeydown="displayKeyCode(event)" tabindex="0" style="height: 100px;">
+    <p>Press any key on the keyboard</p>
+</div>
+
+<!-- Attach mouseover event listener to the image -->
+<img id="myImage" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2022-08/220805-domestic-cat-mjf-1540-382ba2.jpg" onmouseover="changeImageSource()" alt="Image"/>
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .red-text {
+            color: red;
+        }
+    </style>
+    <script>
+        function changeTextColor() {
+            var paragraphs = document.getElementsByClassName('red-text');
+            for (var i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.color = 'red';
+            }
+        }
+    </script>
+    <title>13.DOM Query Selector</title>
+</head>
+<body>
+
+<p id="p1">This paragraph has an ID.</p>
+<p class="red-text">This paragraph has a class of 'red-text'.</p>
+<p>This paragraph doesn't have any special class or ID.</p>
+<p class="red-text">Another paragraph with the class 'red-text'.</p>
+<button onClick="changeTextColor()">Change Text Color</button>
+
+
+</body>
+</html>

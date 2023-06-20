@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+    <title>10.DOM Manipulate CSS Class</title>
+</head>
+<body>
+
+<button onclick="highlightParagraph()">Highlight</button>
+<p id="myParagraph">This is a paragraph.</p>
+<script>
+    function highlightParagraph() {
+        var paragraph = document.getElementById("myParagraph");
+        paragraph.classList.add("highlight");
+    }
+</script>
+
+
+</body>
+</html>

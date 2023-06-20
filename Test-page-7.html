@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function changeImageSource() {
+            var img = document.getElementById('myImage');
+            img.src = 'new_image_url.jpg';
+        }
+    </script>
+    <title>12.DOM Change Attribute Value</title>
+</head>
+<body>
+
+<img id="myImage" src="image_url.jpg" alt="Initial Image">
+<button onclick="changeImageSource()">Change Image Source</button>
+
+
+</body>
+</html>

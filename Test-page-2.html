@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var errorMessages = [];
+
+            // Name validation
+            if (name === '') {
+                errorMessages.push('Name is required.');
+            } else if (!/^[A-Za-z]+$/.test(name)) {
+                errorMessages.push('Name should contain only letters.');
+            }
+
+            // Email validation
+            if (email === '') {
+                errorMessages.push('Email is required.');
+            } else if (!/^[\w.-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+                errorMessages.push('Email should be a valid email address.');
+            }
+
+            // Password validation
+            if (password === '') {
+                errorMessages.push('Password is required.');
+            } else if (password.length < 8 || !/\d/.test(password) || !/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+                errorMessages.push('Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit.');
+            }
+
+            // Confirm Password validation
+            if (confirmPassword === '') {
+                errorMessages.push('Confirm Password is required.');
+            } else if (confirmPassword !== password) {
+                errorMessages.push('Confirm Password should match the Password field.');
+            }
+
+            // Display error messages
+            var errorContainer = document.getElementById('errorContainer');
+            errorContainer.innerHTML = '';
+            if (errorMessages.length > 0) {
+                for (var i = 0; i < errorMessages.length; i++) {
+                    var errorElement = document.createElement('p');
+                    errorElement.className = 'error';
+                    errorElement.textContent = errorMessages[i];
+                    errorContainer.appendChild(errorElement);
+                }
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+    <title>9.JS DOM Working with Form Input</title>
+</head>
+<body>
+
+<h1>Form Validation</h1>
+<form onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"/>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"/>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"/>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword"/>
+
+    <button type="submit" value="Submit">Submit</button>
+</form>
+
+<div id="errorContainer"></div>
+
+</body>
+</html>
